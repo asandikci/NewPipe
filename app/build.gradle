@@ -11,6 +11,10 @@ plugins {
     id "org.sonarqube" version "4.0.0.2929"
 }
 
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+}
 android {
     compileSdk 34
     namespace 'org.schabi.newpipe'
@@ -110,6 +114,10 @@ android {
                          // 'COPYRIGHT' belongs to RxJava...
                          'META-INF/COPYRIGHT']
         }
+    }
+
+    buildFeatures {
+        aidl true
     }
 }
 
@@ -247,6 +255,10 @@ dependencies {
     implementation 'com.github.livefront:bridge:v2.0.2'
     implementation "com.evernote:android-state:$stateSaverVersion"
     kapt "com.evernote:android-state-processor:$stateSaverVersion"
+
+    // changing fonts
+    implementation 'com.github.MarcinOrlowski:fonty:3.1.5'
+
 
     // HTML parser
     implementation "org.jsoup:jsoup:1.17.2"
